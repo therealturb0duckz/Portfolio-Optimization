@@ -2,7 +2,7 @@
 
 A comprehensive **Python-based portfolio optimization project** demonstrating modern portfolio theory, numerical optimization, and Monte Carlo simulation. This project shows how mathematical and computational techniques can be applied to construct efficient investment portfolios using real-world stock data.
 
----
+
 
 ## 📊 Overview
 
@@ -14,7 +14,7 @@ This project explores:
 - **Value at Risk (VaR)** and scenario-based risk analysis
 - **Technical indicator integration** for deeper insights
 
----
+
 
 ## ✨ Features
 
@@ -29,12 +29,6 @@ Analyzes a 5-asset portfolio:
   - No short-selling (`0 ≤ w ≤ 1`)  
   - Fully invested (`sum(w) = 1`)  
 
-### 🔹 Technical Indicators Included
-- **RSI**
-- **MACD**
-- **Bollinger Bands**
-- **EMA**
-- **ATR**
 
 ### 🔹 Interactive Visual Output
 - Efficient frontier  
@@ -42,7 +36,7 @@ Analyzes a 5-asset portfolio:
 - Monte Carlo simulation distribution  
 - Weight changes across risk tolerance levels  
 
----
+
 
 ## 🛠️ Technologies Used
 
@@ -52,7 +46,7 @@ Analyzes a 5-asset portfolio:
 - **Matplotlib / Seaborn** — visualization  
 - **SciPy** — numerical optimization (`minimize`)
 
----
+
 
 ## 📈 Methodology
 
@@ -62,7 +56,7 @@ Historical data (Feb 2015 → Nov 2025) including:
 - Volume  
 - Technical indicators  
 
----
+
 
 ### 2️⃣ Return & Risk Calculation
 
@@ -70,7 +64,7 @@ Historical data (Feb 2015 → Nov 2025) including:
 - **Expected Return Vector (μ)**: mean daily return  
 - **Covariance Matrix (Σ)**: captures cross-asset volatility relationships  
 
----
+
 
 ### 3️⃣ Portfolio Optimization
 
@@ -98,7 +92,7 @@ Where:
   0 \le w_i \le 1
   \]
 
----
+
 
 ### 4️⃣ Monte Carlo Simulation
 
@@ -110,12 +104,12 @@ Where:
   - Value at Risk (VaR 95%)  
   - Probability of loss  
 
----
+
 
 ### 5️⃣ Efficient Frontier
 Risk tolerance **q** varied from **0 → 1000** to visualize optimal portfolios under different preferences.
 
----
+
 
 ## 🟦 Results
 
@@ -139,7 +133,7 @@ Risk tolerance **q** varied from **0 → 1000** to visualize optimal portfolios 
 - **AMZN + TSM** provide diversification  
 - Overall risk significantly reduced vs. individual asset volatility  
 
----
+
 
 ## 📉 Visualizations Generated
 
@@ -148,7 +142,7 @@ Risk tolerance **q** varied from **0 → 1000** to visualize optimal portfolios 
 - Monte Carlo outcome distribution  
 - Risk tolerance sensitivity plot  
 
----
+
 
 ## 🔍 Risk Analysis
 
@@ -156,7 +150,7 @@ Risk tolerance **q** varied from **0 → 1000** to visualize optimal portfolios 
 - **Diversification benefits** clearly shown  
 - **Scenario analysis** for stress-testing  
 
----
+
 
 ## 🎓 Concepts Demonstrated
 
