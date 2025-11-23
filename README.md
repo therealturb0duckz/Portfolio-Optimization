@@ -1,104 +1,171 @@
-# Portfolio Optimization Using Numerical Methods
-A comprehensive Python-based portfolio optimization project that applies mathematical and computational techniques to construct efficient investment portfolios. This project demonstrates the practical application of optimization algorithms, Monte Carlo simulation, and modern portfolio theory to real-world stock data.
+# 🌟 Portfolio Optimization Using Numerical Methods
+
+A comprehensive **Python-based portfolio optimization project** demonstrating modern portfolio theory, numerical optimization, and Monte Carlo simulation. This project shows how mathematical and computational techniques can be applied to construct efficient investment portfolios using real-world stock data.
+
+---
+
 ## 📊 Overview
-This project explores portfolio optimization through:
 
-Mean-Variance Optimization using constrained optimization
-Efficient Frontier visualization showing risk-return tradeoffs
-Monte Carlo Simulation for portfolio performance forecasting
-Risk Analysis including Value at Risk (VaR) calculations
+This project explores:
 
-## 🎯 Features
+- **Mean-Variance Optimization** (Markowitz)
+- **Efficient Frontier construction**
+- **Monte Carlo Simulation** for forecasting outcomes
+- **Value at Risk (VaR)** and scenario-based risk analysis
+- **Technical indicator integration** for deeper insights
 
-Multi-Asset Portfolio Analysis: Analyzes 5 major stocks (AMD, AMZN, CVX, NVDA, TSM)
-Risk-Return Optimization: Implements Markowitz portfolio theory with customizable risk tolerance
-Technical Indicators: Incorporates momentum, trend, and volatility indicators
-Interactive Visualizations: Efficient frontier, weight distributions, and simulation results
-No Short-Selling Constraints: Realistic portfolio constraints (weights between 0 and 1)
+---
+
+## ✨ Features
+
+### 🔹 Multi-Asset Portfolio
+Analyzes a 5-asset portfolio:
+**AMD, AMZN, CVX, NVDA, TSM**
+
+### 🔹 Optimization
+- Markowitz mean-variance model  
+- Adjustable risk tolerance parameter **q**  
+- Realistic constraints:  
+  - No short-selling (`0 ≤ w ≤ 1`)  
+  - Fully invested (`sum(w) = 1`)  
+
+### 🔹 Technical Indicators Included
+- **RSI**
+- **MACD**
+- **Bollinger Bands**
+- **EMA**
+- **ATR**
+
+### 🔹 Interactive Visual Output
+- Efficient frontier  
+- Optimal portfolio weights  
+- Monte Carlo simulation distribution  
+- Weight changes across risk tolerance levels  
+
+---
 
 ## 🛠️ Technologies Used
 
-Python 3.x
-NumPy: Numerical computations and linear algebra
-Pandas: Data manipulation and analysis
-Matplotlib/Seaborn: Data visualization
-SciPy: Optimization algorithms (scipy.optimize.minimize)
+- **Python 3.x**
+- **NumPy** — mathematical operations  
+- **Pandas** — data manipulation  
+- **Matplotlib / Seaborn** — visualization  
+- **SciPy** — numerical optimization (`minimize`)
 
+---
 
 ## 📈 Methodology
-1. Data Collection
-Historical stock data spanning from February 2015 to November 2025 (2,701+ trading days) includes:
 
-Price data (Open, High, Low, Close, Volume)
-Technical indicators (RSI, MACD, Bollinger Bands, EMA, ATR)
+### 1️⃣ Data Collection
+Historical data (Feb 2015 → Nov 2025) including:
+- OHLC prices  
+- Volume  
+- Technical indicators  
 
-2. Return & Risk Calculation
+---
 
-Daily Returns: Computed as percentage changes in closing prices
-Expected Returns (μ): Mean of historical daily returns
-Risk (Σ): Covariance matrix capturing correlations between assets
+### 2️⃣ Return & Risk Calculation
 
-3. Portfolio Optimization
-The optimization minimizes the cost function:
-Cost(w) = w^T Σ w - q(w^T r)
+- **Daily Returns**: % change of closing prices  
+- **Expected Return Vector (μ)**: mean daily return  
+- **Covariance Matrix (Σ)**: captures cross-asset volatility relationships  
+
+---
+
+### 3️⃣ Portfolio Optimization
+
+#### Objective Function
+\[
+\text{Cost}(w) = w^\top \Sigma w - q (w^\top r)
+\]
+
 Where:
 
-w = portfolio weights
-Σ = covariance matrix
-r = expected returns vector
-q = risk tolerance parameter
+| Symbol | Meaning |
+|--------|---------|
+| \( w \) | portfolio weights |
+| \( \Sigma \) | covariance matrix |
+| \( r \) | expected returns |
+| \( q \) | risk tolerance |
 
-Constraints:
+#### Constraints
+- Fully invested:  
+  \[
+  \sum w_i = 1
+  \]
+- No short-selling:  
+  \[
+  0 \le w_i \le 1
+  \]
 
-Sum of weights = 1 (fully invested)
-No short selling: 0 ≤ w_i ≤ 1
+---
 
-4. Monte Carlo Simulation
+### 4️⃣ Monte Carlo Simulation
 
-Simulates 10,000 portfolio scenarios over 252 trading days (1 year)
-Uses multivariate normal distribution based on historical statistics
-Calculates Value at Risk (VaR) at 95% confidence level
+- **10,000 simulations**
+- **252 trading days** (1-year horizon)
+- Based on historical mean & covariance  
+- Outputs:  
+  - Final portfolio distribution  
+  - Value at Risk (VaR 95%)  
+  - Probability of loss  
 
-5. Efficient Frontier
-Visualizes optimal portfolios across different risk-return preferences by varying the risk tolerance parameter q from 0 to 1000.
-📊 Key Results
-Optimal Portfolio Allocation (q=0.5)
-StockWeight AMD17.99%AMZN26.32%CVX0.00%NVDA29.85%TSM25.84%
-Portfolio Metrics:
+---
 
-Expected Return: 0.182% (daily)
-Portfolio Risk (Std): 2.15%
+### 5️⃣ Efficient Frontier
+Risk tolerance **q** varied from **0 → 1000** to visualize optimal portfolios under different preferences.
 
-## Key Insights
+---
 
-CVX receives zero allocation due to lower returns and suboptimal risk-return profile
-NVDA receives highest allocation, balancing high returns with acceptable risk
-AMZN provides diversification benefits with moderate risk
-Portfolio risk is significantly lower than individual stock volatilities due to diversification
+## 🟦 Results
 
-## 📉 Visualizations
-The project generates several key visualizations:
+### 📌 Optimal Portfolio (q = 0.5)
 
-Efficient Frontier: Shows optimal risk-return combinations
-Portfolio Weight Distribution: Bar chart of optimal allocations
-Monte Carlo Simulation Histogram: Distribution of 1-year portfolio outcomes
-Risk Tolerance Analysis: How weights change with different q values
+| Stock | Weight |
+|-------|--------|
+| AMD | **17.99%** |
+| AMZN | **26.32%** |
+| CVX | **0.00%** |
+| NVDA | **29.85%** |
+| TSM | **25.84%** |
+
+### 📌 Portfolio Metrics
+- **Expected Return:** 0.182% (daily)  
+- **Portfolio Std Dev:** 2.15% (daily)
+
+### 💡 Insights
+- **CVX** receives 0% due to poor risk-return profile  
+- **NVDA** dominates due to strong returns  
+- **AMZN + TSM** provide diversification  
+- Overall risk significantly reduced vs. individual asset volatility  
+
+---
+
+## 📉 Visualizations Generated
+
+- Efficient Frontier  
+- Portfolio weight bar chart  
+- Monte Carlo outcome distribution  
+- Risk tolerance sensitivity plot  
+
+---
 
 ## 🔍 Risk Analysis
 
-Value at Risk (VaR): Quantifies potential losses at 5% confidence level
-Diversification Benefits: Demonstrates risk reduction through optimal asset combination
-Scenario Analysis: Explores portfolio behavior under various market conditions
+- **Value at Risk (VaR 95%)**
+- **Diversification benefits** clearly shown  
+- **Scenario analysis** for stress-testing  
+
+---
 
 ## 🎓 Concepts Demonstrated
 
-Modern Portfolio Theory (Markowitz)
-Constrained optimization
-Statistical simulation (Monte Carlo)
-Risk-return tradeoff analysis
-Numerical methods in finance
-Data-driven investment strategies
+- Markowitz Portfolio Theory  
+- Constrained optimization  
+- Monte Carlo simulation  
+- Risk-return analysis  
+- Numerical methods in finance  
+- Data-driven portfolio construction  
 
 
 
-⭐ If you found this project helpful, please consider giving it a star!
