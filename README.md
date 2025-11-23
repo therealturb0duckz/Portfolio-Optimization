@@ -69,10 +69,11 @@ Historical data (Feb 2015 → Nov 2025) including:
 ### 3️⃣ Portfolio Optimization
 
 #### Objective Function
+$
 \[
 \text{Cost}(w) = w^\top \Sigma w - q (w^\top r)
 \]
-
+$
 Where:
 
 | Symbol | Meaning |
