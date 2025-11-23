@@ -69,29 +69,35 @@ Historical data (Feb 2015 → Nov 2025) including:
 ### 3️⃣ Portfolio Optimization
 
 #### Objective Function
-$
-\[
+The cost function is:
+
+$$
 \text{Cost}(w) = w^\top \Sigma w - q (w^\top r)
-\]
-$
+$$
+
 Where:
 
 | Symbol | Meaning |
 |--------|---------|
-| \( w \) | portfolio weights |
-| \( \Sigma \) | covariance matrix |
-| \( r \) | expected returns |
-| \( q \) | risk tolerance |
+| $w$ | portfolio weights |
+| $\Sigma$ | covariance matrix |
+| $r$ | expected returns |
+| $q$ | risk tolerance |
+
 
 #### Constraints
-- Fully invested:  
-  \[
-  \sum w_i = 1
-  \]
-- No short-selling:  
-  \[
-  0 \le w_i \le 1
-  \]
+- Fully invested:
+
+$$
+\sum_i w_i = 1
+$$
+
+- No short-selling:
+
+$$
+0 \le w_i \le 1
+$$
+
 
 
 
@@ -142,7 +148,6 @@ Risk tolerance **q** varied from **0 → 1000** to visualize optimal portfolios 
 - Portfolio weight bar chart  
 - Monte Carlo outcome distribution  
 - Risk tolerance sensitivity plot  
-
 
 
 ## 🔍 Risk Analysis
