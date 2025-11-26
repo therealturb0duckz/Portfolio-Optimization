@@ -40,7 +40,7 @@ Analyzes a 5-asset portfolio:
 
 ## 🛠️ Technologies Used
 
-- **Python 3.x**
+- **Python 3.10**
 - **NumPy** — mathematical operations  
 - **Pandas** — data manipulation  
 - **Matplotlib / Seaborn** — visualization  
@@ -51,11 +51,8 @@ Analyzes a 5-asset portfolio:
 ## 📈 Methodology
 
 ### 1️⃣ Data Collection
-Historical data (Feb 2015 → Nov 2025) including:
-- OHLC prices  
-- Volume  
-- Technical indicators  
-
+Historical data (Feb 2015 -> Nov 2025) including:
+- The data originally retrieved from Yahoo Finance
 
 
 ### 2️⃣ Return & Risk Calculation
@@ -118,44 +115,86 @@ Risk tolerance **q** varied from **0 → 1000** to visualize optimal portfolios 
 
 
 
-## 🟦 Results
+# 🟦 Portfolio Optimization Results
 
-### 📌 Optimal Portfolio (q = 0.5)
+## 📌 Optimal Portfolio (Best Trade-Off at q = 1.0)
+
+This portfolio delivers the **highest Sharpe Ratio (0.0853)** among all optimized selections, offering the best balance between return and volatility.
+
+### **Portfolio Weights**
 
 | Stock | Weight |
 |-------|--------|
-| AMD | **17.99%** |
-| AMZN | **26.32%** |
-| CVX | **0.00%** |
-| NVDA | **29.85%** |
-| TSM | **25.84%** |
+| **AMD** | **28.99%** |
+| **AMZN** | **13.45%** |
+| **CVX** | **0.00%** |
+| **NVDA** | **43.53%** |
+| **TSM** | **14.03%** |
 
-### 📌 Portfolio Metrics
-- **Expected Return:** 0.182% (daily)  
-- **Portfolio Std Dev:** 2.15% (daily)
 
-### 💡 Insights
-- **CVX** receives 0% due to poor risk-return profile  
-- **NVDA** dominates due to strong returns  
-- **AMZN + TSM** provide diversification  
-- Overall risk significantly reduced vs. individual asset volatility  
+
+## 📌 Portfolio Metrics (q = 1.0)
+
+| Metric | Value |
+|--------|--------|
+| **Expected Return (daily)** | 0.0021 |
+| **Portfolio Std Dev (daily)** | 0.0251 |
+| **Annualized Sharpe Ratio (rf = 0)** | **0.0853** |
+
+
+
+## 💡 Key Insights
+
+### **1. NVDA Dominance**
+- NVDA holds the highest allocation (**43.53%**).
+- This is driven by its strong historical returns and attractive risk–reward characteristics.
+
+### **2. CVX Exclusion**
+- CVX receives **0% weight**.
+- Its risk-return profile contributes less to improving portfolio efficiency compared with higher-growth assets.
+
+### **3. Critical Trade-Off Point**
+- The transition from the equal-weight-like portfolios (**q = 0.7**) to **q = 1.0** shows the **largest improvement in Sharpe Ratio**.
+- For q > 1.0, additional concentration **adds risk without meaningful return gains**, demonstrating diminishing marginal benefit.
 
 
 
 ## 📉 Visualizations Generated
 
-- Efficient Frontier  
-- Portfolio weight bar chart  
-- Monte Carlo outcome distribution  
-- Risk tolerance sensitivity plot  
+- **Efficient Frontier Plot**  
+- **Portfolio Weight Bar Chart**  
+- **Monte Carlo Outcome Distribution**  
+- **Risk Tolerance Sensitivity Curve**  
+
+These visualizations help illustrate the trade-offs between risk, return, and portfolio concentration.
 
 
-## 🔍 Risk Analysis
 
-- **Value at Risk (VaR 95%)**
-- **Diversification benefits** clearly shown  
-- **Scenario analysis** for stress-testing  
+## 🔍 Risk Analysis (1-Year Monte Carlo: 10,000 Simulations)
 
+### **Key Risk Metrics**
+
+| Metric | Result | Interpretation |
+|--------|--------|----------------|
+| **Mean Final Value (Growth Factor)** | **1.701** | On average, the portfolio grows to **170.1%** of initial value after 1 year. |
+| **Value at Risk (VaR 95%)** | **0.826** | 5% chance portfolio falls to **82.6%** of initial value or lower → potential loss ≥ **17.4%**. |
+
+### **Observations**
+- The portfolio shows **clear diversification benefits**, reducing downside risk relative to single-asset exposure.
+- Scenario-based stress testing further confirms stability under varying market conditions.
+
+
+## 📝 Conclusion
+
+The optimized portfolio at **q = 1.0** represents the **best balance of risk and reward**, providing:
+
+- Moderate risk  
+- Improved expected return  
+- Highest risk-adjusted efficiency  
+- Strong diversification  
+- Controlled downside exposure  
+
+This makes it a compelling choice for investors seeking growth while managing volatility effectively.
 
 
 ## 🎓 Concepts Demonstrated
