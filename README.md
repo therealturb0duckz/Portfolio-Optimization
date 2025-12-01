@@ -12,7 +12,6 @@ This project explores:
 - **Efficient Frontier construction**
 - **Monte Carlo Simulation** for forecasting outcomes
 - **Value at Risk (VaR)** and scenario-based risk analysis
-- **Technical indicator integration** for deeper insights
 
 
 
